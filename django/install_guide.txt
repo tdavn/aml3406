@@ -1,0 +1,26 @@
+Install tweetanalyz (Windows)
+
+1. Create folder tweetanalyz in under C:\, and copy all aml3406 into it.
+So that the manage.py file's url is: C:\tweetanalyz\aml3406\manage.py
+
+2. open cmd and browser to folder C:\tweetanalyz
+(type cd c:\tweetanalyz)
+
+3. Install virtual environment: python -m venv virt
+
+where: 'virt' is the name of a folder contain environment; 'venv' is a python package for virtual environment
+
+4. Activate venv: virt\scripts\activate
+Note: if successful, a (virt) appears before line 'C:\tweetanalyz'
+if error, need to disable security: run windows powershell with administrator role, then run "Set-ExecutionPolicy Unrestricted -Scope Process"
+Only need to do that once for ever. See detail at https://stackoverflow.com/questions/18713086/virtualenv-wont-activate-on-windows 
+
+5. Install required packages: 
+- move to aml3206 folder: cd aml3406
+- install : pip install -r requirements.txt 
+
+6. Update database: python manage.py migrate
+
+7. Turn on server: python manage.py runserver
+
+8. Opend a internet brower (Chrome, for example), use the url: http://127.0.0.1:8000/
